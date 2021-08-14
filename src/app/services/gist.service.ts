@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,15 @@ export class GistService {
 
 
   getGistbyUsername(username: any){
-    console.log((`${this.uri}/${username}/gists`))
+    
+    // console.log((`${this.uri}/${username}/gists`))
     return this.http.get(`${this.uri}/${username}/gists`)
+  }
+
+  getCode(url : any)
+  {
+    const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
+    
+    return this.http.get(`${url}`, { headers, responseType: 'text'})
   }
 }

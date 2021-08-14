@@ -1,18 +1,52 @@
 <div class="container">
     <div class="panel panel-primary">
         <div class="panel-heading">
-          <input type="text" id="username" name="username"  placeholder="   Search User..." style="height: 35px; border-radius: 10px; color: #000;" #username> 
+          <input value="lbvf50mobile" type="text" id="username" name="username"  placeholder="   Search User..." style="height: 35px; border-radius: 10px; color: #000;" #username> 
           <button type="button" class="btn btn-success" style="margin-left: 0.5cm;" (click)="getUserGist(username.value)" > Search </button>
         </div>
-        <div class="panel-body">
-            <div class="alert alert-danger" *ngFor="let u of GistList">        
-                <h2>
-                    {{ u.username }}
-                </h2>
-                <li>
-                    {{ u.projectCount }}
-                </li>
+            <div class="panel-body">
+                <div class="success alert-success" *ngFor="let user of UserGist" >        
+                    <h6>
+                        Username: {{ user.owner.login  }}
+                    </h6>
+                    <h6>
+                        <!-- <button data-toggle="modal" data-target="#myModal">
+                        </button>  -->
+                        FileType: 
+                        <a href="" (click)="openFunc(user)" data-toggle="modal" data-target="#myModal" >
+                            {{ UserFileName(user) }}
+                        </a>
+                    </h6>
+                    <h6>
+                        ForkURL: {{ user.forks_url }}
+                    </h6>
+<!-- /// Class Modal implementation -->
+
+                    <div id="myModal" class="modal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Modal Heading</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <h2>
+                                    Code:
+                                </h2>
+                                {{ codeFiles }}
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+
+<!-- /// -->
+                </div>
             </div>
         </div>
-        </div>
-  </div>
+
+
+
+  <p>lbvf50mobile</p>
