@@ -1,11 +1,18 @@
-
 <div class="container">
     <div class="panel panel-primary">
         <div class="panel-heading">
-          <input type="text" id="username" name="username"  placeholder="Search User..." style="height: 35px; border-radius: 10px; color: #000;" #username> 
-          <button type="button" class="btn btn-success" style="margin-left: 0.5cm;" > Search </button>
+          <input type="text" id="username" name="username"  placeholder="   Search User..." style="height: 35px; border-radius: 10px; color: #000;" #username> 
+          <button type="button" class="btn btn-success" style="margin-left: 0.5cm;" (click)="getUserGist(username.value)" > Search </button>
         </div>
         <div class="panel-body">
+            <div class="alert alert-danger" *ngFor="let u of GistList">        
+                <h2>
+                    {{ u.username }}
+                </h2>
+                <li>
+                    {{ u.projectCount }}
+                </li>
+            </div>
         </div>
         </div>
   </div>
