@@ -40,6 +40,7 @@ export class HomeComponent implements OnInit {
     )
   }
 
+  // Getting user's file name and getting filetype based on name
   UserFileName(user:any)
   {
     var filename = Object.keys(user.files)[0]
@@ -49,6 +50,7 @@ export class HomeComponent implements OnInit {
     return(this.filenames.type);
   }
 
+  // Getting file code.
   UserCode(user:any){
  
     var filename = Object.keys(user.files)[0]
@@ -63,6 +65,7 @@ export class HomeComponent implements OnInit {
 
   }
 
+   // Getting file code.
   openFunc(user:any){
     
     var filename = Object.keys(user.files)[0]
@@ -80,6 +83,8 @@ export class HomeComponent implements OnInit {
             
   }
 
+
+    // Getting user's avatar url and intializing in variable which will be passed as a src in img tag. 
   setAvatar(user: any)
   {
 
@@ -88,6 +93,7 @@ export class HomeComponent implements OnInit {
     
   }
 
+  // Passing forkUrl in service and get back Ids attach to the fork address 
   forkedBy(user:any){
     this.forkedUrl = user.forks_url
     // console.log(this.forkedUrl);

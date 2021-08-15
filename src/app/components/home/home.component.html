@@ -1,13 +1,15 @@
+<!-- Bootstrap Panels are used for UI -->
 <div class="container">
     <div class="panel panel-primary">
         <div class="panel-heading" style="color: #000;">
             <div class="d-flex pr-5 pl-5">
 
-                <input   value="lbvf50mobile" type="text" id="username" name="username"  placeholder="   Search User..." #username> 
+                <input  type="text" id="username" name="username"  placeholder="   Search User..." #username> 
                 <button type="button" class="btn btn-success button-style" (click)="getUserGist(username.value)"  > Search </button>
                 <img id="avatar" class="ml-auto" [src]="Avatar_Url" alt=""   >
             </div>
         </div>  
+<!-- All results are displayed in panel-body -->
           <div class="panel-body">
                 <div class="success alert-success panel-style"  *ngFor="let user of UserGist" >        
                     <span > 
@@ -36,9 +38,13 @@
                               Forked List
                             </button>
 
+
+<!-- If forkFlag is true than display forkdata 
+and in case of forkFlag be false displaying message insted -->
                             <div *ngIf = "forkedFlag" >
-                                <div class="dropdown-menu" *ngFor = "let fork of forkedIds | slice:0:3">
-                                  <li class="dropdown-item" >{{fork}}</li>
+                                <div class="dropdown-menu" *ngFor = "let forkUser of forkedIds | slice:0:3">
+                                  <li class="dropdown-item" >{{ forkUser }}</li>
+
 
                                 </div>
 
@@ -50,23 +56,24 @@
 
                                   </div>
                             </div>
+<!-- //// -->
 
                           </div>
 
-<!-- /// Class Modal implementation -->
+<!-- /// Class Modal implementation, used for displaying File Code-->
 
                     <div id="myModal" class="modal">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h4 class="modal-title">Modal Heading</h4>
+                                <h4 class="modal-title">Code</h4>
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                             </div>
                             <div class="modal-body">
-                                <h2>
-                                    Code:
-                                </h2>
-                                {{ codeFiles }}
+                                <pre>
+
+                                    {{ codeFiles }}
+                                </pre>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
