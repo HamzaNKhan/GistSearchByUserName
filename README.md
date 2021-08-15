@@ -16,4 +16,15 @@ Web frameword used is AngularJs. The motivation behind choosing the angular is b
 * Is faster and use single page.  
 * Offers MVC model which is easier to work on.
 
+## Languages
+* TypeScript/ JavaScript
+* HTML
+* Bootstrap
+* CSS
 
+## API
+Api that was used is given:  
+https://api.github.com/gists    
+<br>
+The reference of given API is provided:  
+https://docs.github.com/en/rest/reference/gists
