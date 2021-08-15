@@ -24,4 +24,10 @@ export class GistService {
     return this.http.get(`${Codeurl}`, { headers, responseType: 'text'})
   }
 
+  getForks(forkUrl: any)
+  {
+    console.log(forkUrl);
+    
+    return this.http.get(`${forkUrl}`)
+  }
 }

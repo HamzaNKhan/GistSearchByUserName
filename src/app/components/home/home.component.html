@@ -4,8 +4,8 @@
             <div class="d-flex pr-5 pl-5">
 
                 <input   value="lbvf50mobile" type="text" id="username" name="username"  placeholder="   Search User..." #username> 
-                <button type="button" class="btn btn-success" (click)="getUserGist(username.value)"  > Search </button>
-                <img id="avatar" class="ml-auto" [src]="Avatar_Url"   >
+                <button type="button" class="btn btn-success button-style" (click)="getUserGist(username.value)"  > Search </button>
+                <img id="avatar" class="ml-auto" [src]="Avatar_Url" alt=""   >
             </div>
         </div>  
           <div class="panel-body">
@@ -30,9 +30,29 @@
                                 {{ UserFileName(user) }}
                             </a>
                         </h6>
-                        <h6>
-                            Forked By: {{ user.forks_url }}
-                        </h6>
+                        
+                        <div class="dropdown">
+                            <button class="btn btn-outline-info dropdown-toggle button-style02" type="button" data-toggle="dropdown" (click)=forkedBy(user) >
+                              Forked List
+                            </button>
+
+                            <div *ngIf = "forkedFlag" >
+                                <div class="dropdown-menu" *ngFor = "let fork of forkedIds | slice:0:3">
+                                  <li class="dropdown-item" >{{fork}}</li>
+
+                                </div>
+
+                            </div>
+
+                            <div *ngIf = "!forkedFlag">
+                                <div class="dropdown-menu">
+                                    <li class="dropdown-item" >This gist is forked by no one </li>
+
+                                  </div>
+                            </div>
+
+                          </div>
+
 <!-- /// Class Modal implementation -->
 
                     <div id="myModal" class="modal">
@@ -56,9 +76,13 @@
                     </div>
 
 <!-- /// -->
+
                 </div>
+               
             </div>
+       
         </div>
+
 </div>
 
 

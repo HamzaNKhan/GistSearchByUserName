@@ -14,6 +14,8 @@ export class HomeComponent implements OnInit {
   codeFiles: any
   Avatar_Url : any
   forkedUrl : any
+  forkedIds : any
+  forkedFlag : any
   constructor(
     private srvc: GistService
   ) { }
@@ -87,7 +89,25 @@ export class HomeComponent implements OnInit {
   }
 
   forkedBy(user:any){
-    this.forkedBy = user.forks_url
+    this.forkedUrl = user.forks_url
+    // console.log(this.forkedUrl);
+    
+
+    this.srvc.getForks(this.forkedUrl).subscribe(
+      resp => {
+        this.forkedIds = resp;
+        console.log(resp);
+        
+
+        if(Object.keys(resp).length==0)
+        {
+          this.forkedFlag = false;
+        }
+        
+      },
+      err => console.error(err)
+      
+    )
   }
 
 }
