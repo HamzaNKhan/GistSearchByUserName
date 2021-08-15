@@ -1,25 +1,38 @@
 <div class="container">
     <div class="panel panel-primary">
-        <div class="panel-heading">
-          <input value="lbvf50mobile" type="text" id="username" name="username"  placeholder="   Search User..." style="height: 35px; border-radius: 10px; color: #000;" #username> 
-          <button type="button" class="btn btn-success" style="margin-left: 0.5cm;" (click)="getUserGist(username.value)" > Search </button>
-        </div>
-            <div class="panel-body">
-                <div class="success alert-success" *ngFor="let user of UserGist" >        
-                    <h6>
-                        Username: {{ user.owner.login  }}
-                    </h6>
-                    <h6>
-                        <!-- <button data-toggle="modal" data-target="#myModal">
-                        </button>  -->
-                        FileType: 
-                        <a href="" (click)="openFunc(user)" data-toggle="modal" data-target="#myModal" >
-                            {{ UserFileName(user) }}
-                        </a>
-                    </h6>
-                    <h6>
-                        ForkURL: {{ user.forks_url }}
-                    </h6>
+        <div class="panel-heading" style="color: #000;">
+            <div class="d-flex pr-5 pl-5">
+
+                <input   value="lbvf50mobile" type="text" id="username" name="username"  placeholder="   Search User..." #username> 
+                <button type="button" class="btn btn-success" (click)="getUserGist(username.value)"  > Search </button>
+                <img id="avatar" class="ml-auto" [src]="Avatar_Url"   >
+            </div>
+        </div>  
+          <div class="panel-body">
+                <div class="success alert-success panel-style"  *ngFor="let user of UserGist" >        
+                    <span > 
+                        {{ setAvatar(user) }}
+                        <!-- <script>
+                            document.getElementById('avatar').style.visibility=true;
+                        </script> -->
+                        
+                        <!-- <img src="{{user.owner.avatar_url}}" alt="" style="height: 50px; width: 50px;">
+                        [(Avatar_Url)] = {{user.owner.avatar_url}} -->
+                    </span>
+                        
+                        <h6>
+                            Username: {{ user.owner.login  }}
+                        </h6>
+                        <h6>
+                            
+                            FileType: 
+                            <a href="" (click)="openFunc(user)" data-toggle="modal" data-target="#myModal" >
+                                {{ UserFileName(user) }}
+                            </a>
+                        </h6>
+                        <h6>
+                            Forked By: {{ user.forks_url }}
+                        </h6>
 <!-- /// Class Modal implementation -->
 
                     <div id="myModal" class="modal">
@@ -46,7 +59,7 @@
                 </div>
             </div>
         </div>
+</div>
 
 
 
-  <p>lbvf50mobile</p>

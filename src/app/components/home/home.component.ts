@@ -12,6 +12,8 @@ export class HomeComponent implements OnInit {
   UserGist: any
   filenames : any
   codeFiles: any
+  Avatar_Url : any
+  forkedUrl : any
   constructor(
     private srvc: GistService
   ) { }
@@ -74,6 +76,18 @@ export class HomeComponent implements OnInit {
       )
       console.log(this.filenames.raw_url);
             
+  }
+
+  setAvatar(user: any)
+  {
+
+    this.Avatar_Url = user.owner.avatar_url
+
+    
+  }
+
+  forkedBy(user:any){
+    this.forkedBy = user.forks_url
   }
 
 }

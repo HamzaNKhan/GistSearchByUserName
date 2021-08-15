@@ -1,0 +1,23 @@
+input {
+height: 35px;
+border-radius: 10px;
+}
+
+
+button{
+    width: 65px;
+    height: 35px;
+    margin-left: 0.5cm;
+    border-radius: 10px;
+}
+
+img{
+    width: 40px;
+    height: 40px;
+}
+
+.panel-style{
+    border-radius: 15px;
+    padding: 5px;
+    margin: 15px;
+}

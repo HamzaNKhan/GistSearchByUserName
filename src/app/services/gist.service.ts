@@ -17,10 +17,11 @@ export class GistService {
     return this.http.get(`${this.uri}/${username}/gists`)
   }
 
-  getCode(url : any)
+  getCode(Codeurl : any)
   {
     const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
     
-    return this.http.get(`${url}`, { headers, responseType: 'text'})
+    return this.http.get(`${Codeurl}`, { headers, responseType: 'text'})
   }
+
 }
