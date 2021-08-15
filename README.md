@@ -1,27 +1,19 @@
-# GistApp
+## Summary
+The goal of this application is to allow its users to enter a username and get the full list of public Gists for that user.  
+Here's the list of functionalities in this project : 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.0.
+- <strong> Search: </strong> When a user enters a username, they should be able to get a full list of public Gists by that user. 
 
-## Development server
+- <strong> Filetypes: </strong> Convert the filetypes of the files in the Gist into a tag/badge (For example, if the returned Gist has a list of files containing &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; Python and    Javascript files, the items listed should have the respective tags/badges). 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- <strong> Forks: </strong> Additionally, include with the list of the Gists, the username/avatar of the last 3 users who have forked it. 
 
-## Code scaffolding
+- <strong> Gist contents: </strong> When clicking one of the Gists, display the content of the file
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Framework
+Web frameword used is AngularJs. The motivation behind choosing the angular is becasue it is feature rich.  
+* It supports 2 way binding.  
+* Is faster and use single page.  
+* Offers MVC model which is easier to work on.
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
