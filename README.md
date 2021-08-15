@@ -10,6 +10,8 @@ Here's the list of functionalities in this project :
 
 - <strong> Gist contents: </strong> When clicking one of the Gists, display the content of the file
 
+- <strong> Avatar: </strong> dispaly avatar of serached user profile.
+
 ## Framework
 Web frameword used is AngularJs. The motivation behind choosing the angular is becasue it is feature rich.  
 * It supports 2 way binding.  
